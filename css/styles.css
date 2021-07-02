@@ -48,18 +48,17 @@ body {
   border: none; /*저 박스 경계선 없애줄거야 */
   font-size: 18px;
   margin-bottom: 20px; /*이거 좀 안이쁘면 25px로 고치기*/
+}
+
+/*Log in 박스만 밑에 경계선 없애고싶은데,,,-> not이라는 속성을 사용하자.
+not이 뭐냐면 뭔가가 적용되는걸 원하지않을때 쓰는거야*/
+
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transition: border-color 0.3s ease-in-out;
 }
 
-#login-form input:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-#login-form input:nth-child(2) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
-  /* Q : 이거 두개를 합쳐서 코드짜는 방법은 없을까?*/
-}
+/*input type이 submit이 아닐때, [] 이 사이에 쓰인 것들은 특성선택자(attribute sellector야 */
 
 #login-form input::placeholder {
   color: rgba(0, 0, 0, 0.4);
@@ -74,3 +73,21 @@ body {
 }
 
 /*이제 모든 input에다가 transition 적용할거야 */
+
+#login-form input[type="submit"] {
+  /*[]은 특성선택자*/
+  background-color: var(--yellow);
+  cursor: pointer;
+  /* cursor : not-allowed, cursor : progress 다 가능해 */
+  padding: 20px 0px;
+  border-radius: 5px;
+}
+
+#login-form a {
+  text-align: center;
+  text-decoration: none; /*밑줄 쳐있는거 없애주자 */
+  /*그리고 모든 link는 blue 색상이 디폴트로 적용되어있음. default 색상 바꿔보자
+  부모로부터 상속받는거야. 이 경우에는 a(anchor)가 색상을 아버지로부터 상속받아 오는거야
+  a의 아버지는 login-form이지. default 색은 블랙이야.*/
+  color: inherit;
+}
