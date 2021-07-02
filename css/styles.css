@@ -3,6 +3,12 @@
 @import "status-bar.css";
 /* We should try to keep our style.css as an import file */
 
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,600&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 .welcome-header {
   margin: 90px 0px;
   text-align: center;
@@ -14,7 +20,7 @@
 .welcome-header__title {
   margin-bottom: 20px;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .welcome-header__text {
